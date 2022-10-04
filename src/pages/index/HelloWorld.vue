@@ -1,14 +1,11 @@
 <template>
-  <view class="content">
-    <image class="logo" src="/static/logo.png" />
-    <view class="text-area">
-      <text class="title">{{ title }} </text>
-    </view>
-    <button @click="haha">你好</button>
+  <view>
+    <UserCenter></UserCenter>
   </view>
 </template>
 
 <script setup lang="ts">
+import UserCenter from '../UserCenter/index.vue'
 import { C3 } from '../../api'
 
 import { ref } from 'vue'
