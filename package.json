@@ -57,6 +57,7 @@
     "vuex": "^4.0.2"
   },
   "devDependencies": {
+    "@commitlint/config-conventional": "^17.1.0",
     "@dcloudio/types": "^3.0.14",
     "@dcloudio/uni-automator": "3.0.0-alpha-3060420220922001",
     "@dcloudio/uni-cli-shared": "3.0.0-alpha-3060420220922001",
@@ -64,6 +65,7 @@
     "@dcloudio/vite-plugin-uni": "3.0.0-alpha-3060420220922001",
     "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.1",
+    "commitlint": "^17.1.2",
     "eslint": "^8.24.0",
     "eslint-plugin-vue": "^9.5.1",
     "husky": "^8.0.1",
