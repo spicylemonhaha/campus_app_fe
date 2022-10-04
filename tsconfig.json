@@ -10,7 +10,14 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
-    "types": ["@dcloudio/types"]
+    "types": ["@dcloudio/types", "node"]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "baseUrl": ".", //未设置 "baseUrl" 时，不允许使用非相对路径。
+  "paths": {
+    // 配置导出路径（这里根据自己项目执行修改）
+    "@components/*": ["./src/components/*"],
+    "@utils/*": ["./src/utils/*"],
+    "@/*": ["./src/*"]
+  }
 }

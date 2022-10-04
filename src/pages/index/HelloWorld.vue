@@ -1,15 +1,19 @@
 <template>
-  <view class="content">
-    <image class="logo" src="/static/logo.png" />
-    <view class="text-area">
-      <text class="title">{{ title }} </text>
-    </view>
+  <view>
+    <UserCenter></UserCenter>
   </view>
 </template>
 
 <script setup lang="ts">
+import UserCenter from '../UserCenter/index.vue'
+import { C3 } from '../../api'
+
 import { ref } from 'vue'
 const title = ref('放在糖果旁的是我很想回忆的甜~')
+const haha = () => {
+  console.log(C3())
+  console.log(process.env.NODE_ENV)
+}
 </script>
 
 <style>

@@ -20,6 +20,7 @@
   "rules": {
     "max-lines": ["error", { "max": 300, "skipBlankLines": true }],
     "no-redeclare": "error",
-    "no-useless-return": "error"
+    "no-useless-return": "error",
+    "vue/multi-word-component-names": "off"
   }
 }
