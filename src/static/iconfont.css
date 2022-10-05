@@ -8,6 +8,22 @@
   font-size: 16px;
 }
 
+.icon-fenxiang:before {
+  content: '\e72f';
+}
+
+.icon-dianzan:before {
+  content: '\e61c';
+}
+
+.icon-pinglun:before {
+  content: '\e8c5';
+}
+
+.icon-gengduo:before {
+  content: '\e719';
+}
+
 .icon-fankuijianyi:before {
   content: '\e600';
 }

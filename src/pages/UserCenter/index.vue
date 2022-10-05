@@ -42,7 +42,7 @@ import { ref } from 'vue'
 import uniIcons from '@dcloudio/uni-ui/lib/uni-icons/uni-icons.vue'
 import Bar from './components/Bar.vue'
 import PreferBar from './components/PreferBar.vue'
-const avatarUrl = ref('https://cdn.uviewui.com/uview/album/2.jpg')
+const avatarUrl = ref<string>('https://cdn.uviewui.com/uview/album/2.jpg')
 const barArr = [
   { icon: 'auth', title: '同校认证' },
   { icon: 'hand-up', title: '推荐给好友' },
