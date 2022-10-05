@@ -1,19 +1,14 @@
 <template>
   <view>
-    <UserCenter></UserCenter>
+    <!-- <UserCenter></UserCenter> -->
+    <DynamicGround></DynamicGround>
   </view>
 </template>
 
 <script setup lang="ts">
-import UserCenter from '../UserCenter/index.vue'
-import { C3 } from '../../api'
-
+// import UserCenter from '../UserCenter/index.vue'
 import { ref } from 'vue'
-const title = ref('放在糖果旁的是我很想回忆的甜~')
-const haha = () => {
-  console.log(C3())
-  console.log(process.env.NODE_ENV)
-}
+import DynamicGround from '../DynamicGround/index.vue'
 </script>
 
 <style>
