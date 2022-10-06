@@ -1,6 +1,12 @@
 {
   "pages": [
     {
+	  "path": "pages/GeneralEditing/index",
+	  "style": {
+		  "navigationBarTitleText": "通用编辑"
+	  }
+    },
+    {
       "path": "pages/index/HelloWorld",
       "style": {
         "navigationBarTitleText": "uni-app"
@@ -12,12 +18,43 @@
         "navigationBarTitleText": "",
         "enablePullDownRefresh": false
       }
-    }
+    },
+	{
+	  "path": "pages/News/index",
+	  "style": {
+	    "navigationBarTitleText": "消息"
+	  }
+	},
+	{
+		"path": "pages/Trends/index",
+		"style": {
+		  "navigationBarTitleText": "动态"
+		}
+	},
+	{
+		"path": "pages/Publish/index",
+		"style": {
+		  "navigationBarTitleText": "发布"
+		}
+	},
+	{
+		"path": "pages/Match/index",
+		"style": {
+		  "navigationBarTitleText": "匹配"
+		}
+	},
+	{
+		"path": "pages/Mine/index",
+		"style": {
+		  "navigationBarTitleText": "我的"
+		}
+	}
   ],
   "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8",
-    "navigationStyle": "custom"
+    "backgroundColor": "#F8F8F8"
   },
   "condition": {
     //模式配置，仅开发期间生效
@@ -37,5 +74,38 @@
       "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
       "^u-(.*)": "uview-plus/components/u-$1/u-$1.vue"
     }
+  },
+  "tabBar": {
+  	"color": "#7A7E83",
+  	"selectedColor": "#3cc51f",
+  	"borderStyle": "black",
+  	"backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/News/index",
+        "text": "消息",
+      	"iconPath": "static/img/tarBar/content.png"
+      },
+      {
+		"pagePath": "pages/Trends/index",
+		"text": "动态",
+		"iconPath": "static/img/tarBar/action.png"
+      },
+      {
+		"pagePath": "pages/Publish/index",
+		"text": "发布",
+		"iconPath": "static/img/tarBar/add.png"
+      },
+      {
+		"pagePath": "pages/Match/index",
+		"text": "匹配",
+		"iconPath": "static/img/tarBar/match.png"
+      },
+      {
+		"pagePath": "pages/Mine/index",
+		"text": "我的",
+		"iconPath": "static/img/tarBar/home.png"
+      }
+    ]
   }
 }
