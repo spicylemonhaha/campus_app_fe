@@ -94,7 +94,7 @@ const intoChat = (item: any) => {
           .map((key) => `${key}=${convInfo[key]}`)
           .join('&')
       uni.navigateTo({
-        url: '../chat-cdw/chat' + paramsString,
+        url: '../Chat/index' + paramsString,
       })
     })
 }
