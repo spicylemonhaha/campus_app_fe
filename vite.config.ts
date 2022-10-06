@@ -9,6 +9,9 @@ export default defineConfig({
       '@': resolve(__dirname, 'src'), // 设置 `@` 指向 `src` 目录
     },
   },
+  optimizeDeps: {
+    entries: ['@dcloudio/uni-ui'],
+  },
   server: {
     cors: true,
     port: 6900,

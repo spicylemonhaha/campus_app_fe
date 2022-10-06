@@ -12,12 +12,19 @@
         "navigationBarTitleText": "",
         "enablePullDownRefresh": false
       }
-    }
+    },
+	{
+	  "path": "pages/DynamicGround/index",
+	  "style": {
+	    "navigationBarTitleText": "",
+	    "enablePullDownRefresh": false
+	  }
+	}
   ],
   "globalStyle": {
     "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8",
-    "navigationStyle": "custom"
+    "backgroundColor": "#F8F8F8"
+    // "navigationStyle": "custom"
   },
   "condition": {
     //模式配置，仅开发期间生效
@@ -27,7 +34,11 @@
         "name": "", //模式名称
         "path": "pages/UserCenter/index", //启动页面，必选
         "query": "" //启动参数，在页面的onLoad函数里面得到
-      }
+      },
+	  {
+		  "name": "",
+		  "path": "pages/DynamicGround/index"
+	  }
     ]
   },
   "easycom": {
