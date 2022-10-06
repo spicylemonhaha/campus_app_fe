@@ -1,12 +1,12 @@
 <template>
   <view>
-    <!-- <UserCenter></UserCenter> -->
+    <UserCenter></UserCenter>
     <DynamicGround></DynamicGround>
   </view>
 </template>
 
 <script setup lang="ts">
-// import UserCenter from '../UserCenter/index.vue'
+import UserCenter from '../UserCenter/index.vue'
 import { ref } from 'vue'
 import DynamicGround from '../DynamicGround/index.vue'
 </script>

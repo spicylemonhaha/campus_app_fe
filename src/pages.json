@@ -7,12 +7,42 @@
       }
     },
     {
+      "path": "pages/DynamicGround/index",
+      "style": {
+        "navigationBarTitleText": "uni-app"
+      }
+    },
+    {
       "path": "pages/UserCenter/index",
       "style": {
         "navigationBarTitleText": "",
         "enablePullDownRefresh": false
       }
-    }
+    },
+	{
+	  "path": "pages/UserInfoEdit/index",
+	  "style": {
+	    "navigationBarTitleText": "uni-app"
+	  }
+	},
+  {
+	  "path": "pages/TopicSquare/index",
+	  "style": {
+	    "navigationBarTitleText": "uni-app"
+	  }
+	},
+	{
+	  "path": "pages/UserInfoShow/index",
+	  "style": {
+	    "navigationBarTitleText": "uni-app"
+	  }
+	},
+	{
+	  "path": "pages/BaseInfoEdit/index",
+	  "style": {
+	    "navigationBarTitleText": "基本信息"
+	  }
+	}
   ],
   "globalStyle": {
     "navigationBarBackgroundColor": "#F8F8F8",
