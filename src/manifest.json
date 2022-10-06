@@ -1,5 +1,5 @@
 {
-    "name" : "",
+    "name" : "chat-ap",
     "appid" : "",
     "description" : "",
     "versionName" : "1.0.0",
@@ -50,9 +50,11 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "",
+        "appid" : "wx3c1bc0a79064a20b",
         "setting" : {
-            "urlCheck" : false
+            "urlCheck" : false,
+            "postcss" : true,
+            "minified" : true
         },
         "usingComponents" : true
     },
@@ -65,8 +67,8 @@
     "mp-toutiao" : {
         "usingComponents" : true
     },
-    "uniStatistics": {  
-        "enable": false
+    "uniStatistics" : {
+        "enable" : false
     },
     "vueVersion" : "3"
 }
