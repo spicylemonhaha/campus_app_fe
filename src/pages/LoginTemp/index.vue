@@ -1,6 +1,6 @@
 <template>
   <view class="container">
-    <uni-title type="h1" align="center" title="zego IM"></uni-title>
+    <uni-title type="h1" align="center" title="模拟登录"></uni-title>
     <uni-forms ref="form" :modelValue="loginForm" :rules="rules">
       <uni-forms-item label="User ID" name="userID">
         <uni-easyinput
