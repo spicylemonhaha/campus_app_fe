@@ -25,39 +25,18 @@
           @select="uploadImg"
           :image-styles="imageStyles"
         ></uniFilePicker>
-        <view class="tagChoice" @click="open">
-          <view class="leftText">
-            <i className="iconfont icon-huati a"></i>参与话题
-          </view>
-          <view class="rightText"> # 选择话题 > </view>
-        </view>
+        <TagChoice :tags="tags" @changeTag="clickTag"></TagChoice>
+        <button class="submitBut" form-type="submit" @click="submitTrend">
+          发布
+        </button>
       </view>
-      <uni-popup ref="pop" type="bottom">
-        <scroll-view class="popContent" scroll-y="true" show-scrollbar="false">
-          <view class="popTitle">
-            选择参与话题
-            <i className="iconfont icon-guanbi b" @click="close"></i>
-          </view>
-          <view class="popTags">
-            <view
-              class="popTag"
-              v-for="(tag, index) in tagsData"
-              :key="index"
-              @click="clickTag(tag)"
-              >{{ tag }}</view
-            >
-          </view>
-        </scroll-view>
-      </uni-popup>
-      <button class="submitBut" form-type="submit" @click="submitTrend">
-        发布
-      </button>
     </view>
   </view>
 </template>
 <script setup lang="ts">
 import uniFilePicker from '@dcloudio/uni-ui/lib/uni-file-picker/uni-file-picker.vue'
 import { ref, reactive } from 'vue'
+import TagChoice from './components/TagChoice.vue'
 const imageStyles = {
   height: 200,
   width: 200,
@@ -70,21 +49,8 @@ const imageStyles = {
 let imageValue = reactive([])
 const text = ref('')
 const myTag = ref('')
-const tagsData = reactive([
-  '这是一个话题',
-  'bbb',
-  'ccc',
-  'ddd',
-  'aaa',
-  'bbb',
-  'ccc',
-  'ddd',
-  'aaa',
-  'bbb',
-  'ccc',
-  'ddd',
-])
-const pop = ref(null)
+const tags = reactive(['这是一个话题', 'bbb'])
+// const pop = ref(null)
 const imgUpload = ref(null)
 function deleteImg(e: any) {
   imageValue = imageValue.filter((x) => x !== e.tempFilePath)
@@ -113,7 +79,7 @@ function hasTag() {
     return false
   }
 }
-function submitTrend() {
+var submitTrend = function submitTrend() {
   if (hasText()) {
     if (hasTag()) {
       uni.showModal({
@@ -155,19 +121,13 @@ function submitTrend() {
     }
   }
 }
-function clickTag(tag: string) {
+
+function clickTag(tag: any) {
   if (myTag.value !== tag) {
     myTag.value = tag
   } else {
     myTag.value = ''
   }
-  pop.value.close()
-}
-function open() {
-  pop.value.open()
-}
-function close() {
-  pop.value.close()
 }
 </script>
 <style lang="scss">
@@ -177,16 +137,7 @@ page {
 .a {
   color: rgb(26, 232, 204);
 }
-.b {
-  font-style: normal;
-  color: #717171;
-  font-size: 24rpx;
-  position: absolute;
-  right: 30rpx;
-  top: 20rpx;
-  width: 60rpx;
-  height: 35rpx;
-}
+
 .topBar {
   font-size: 24rpx;
   color: #8f8f94;
@@ -222,24 +173,7 @@ page {
     line-height: 72rpx;
     border-radius: 30rpx;
   }
-  .tagChoice {
-    display: flex;
-    width: 700rpx;
-    margin: 0 auto;
-    color: #464646;
-    height: 64rpx;
-    font-size: 24rpx;
-    border-radius: 30rpx;
-    line-height: 64rpx;
-    background-color: #f3f4f8;
-    justify-content: space-between;
-    .leftText,
-    .rightText {
-      padding-left: 20rpx;
-      padding-right: 20rpx;
-      font-weight: 600;
-    }
-  }
+
   .myTag {
     display: inline-block;
     background-color: rgb(211, 255, 255);
@@ -258,42 +192,6 @@ page {
     margin-right: 0;
     font-style: normal;
     vertical-align: -8%;
-  }
-}
-.popContent {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  width: 750rpx;
-  height: 450rpx;
-  border-radius: 42rpx 42rpx 0 0;
-  align-items: center;
-  position: relative;
-  .popTitle {
-    font-size: 24rpx;
-    color: #8f8f94;
-    margin: 15rpx;
-    text-align: center;
-  }
-  .popTags {
-    margin-top: 30rpx;
-    justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
-    .popTag {
-      display: inline-block;
-      width: 280rpx;
-      height: 70rpx;
-      line-height: 70rpx;
-      background-color: #ceffff;
-      text-align: center;
-      color: #009e8c;
-      font-size: 28rpx;
-      margin: 0rpx 30rpx 15rpx 30rpx;
-      border-radius: 35rpx;
-      font-weight: 600;
-    }
   }
 }
 </style>
