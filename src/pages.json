@@ -44,6 +44,18 @@
       }
     },
     {
+      "path": "pages/ChatList/index",
+      "style": {
+        "navigationBarTitleText": "消息列表"
+      }
+    },
+    {
+      "path": "pages/LabelTheme/index",
+      "style": {
+        "navigationBarTitleText": "标签专栏"
+      }
+    },
+    {
       "path": "pages/DynamicGround/index",
       "style": {
         "navigationBarTitleText": "",
