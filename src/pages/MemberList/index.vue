@@ -49,7 +49,7 @@
 
 <script setup lang="ts">
 import { avatarPrefix } from '../../assets/config'
-import baseNavBar from '../../components/base-nav-bar/base-nav-bar.vue'
+import baseNavBar from '../../components/baseNavBar/base-nav-bar.vue'
 import useStore from '../../store/index'
 import { computed } from 'vue'
 import { onShow } from '@dcloudio/uni-app'
@@ -94,7 +94,7 @@ const intoChat = (item: any) => {
           .map((key) => `${key}=${convInfo[key]}`)
           .join('&')
       uni.navigateTo({
-        url: '../chat-cdw/chat' + paramsString,
+        url: '../Chat/index' + paramsString,
       })
     })
 }

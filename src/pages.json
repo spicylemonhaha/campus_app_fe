@@ -1,5 +1,29 @@
 {
   "pages": [
+	{
+	  "path": "pages/LoginTemp/index",
+	  "style": {
+		  "navigationBarTitleText": "登录"
+	  }
+	},
+	{
+	  "path": "pages/Action/index",
+	  "style": {
+		  "navigationBarTitleText": "创建聊天"
+	  }
+	},
+	{
+	  "path": "pages/Chat/index",
+	  "style": {
+	  	  "navigationBarTitleText": "聊天"
+	  }
+	},
+	{
+	  "path": "pages/MemberList/index",
+	  "style": {
+		  "navigationBarTitleText": "列表"
+	  }
+	},
     {
       "path": "pages/GeneralEditing/index",
       "style": {
