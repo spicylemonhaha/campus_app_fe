@@ -1,10 +1,10 @@
 {
   "pages": [
     {
-	  "path": "pages/GeneralEditing/index",
-	  "style": {
-		  "navigationBarTitleText": "通用编辑"
-	  }
+      "path": "pages/GeneralEditing/index",
+      "style": {
+        "navigationBarTitleText": "通用编辑"
+      }
     },
     {
       "path": "pages/index/HelloWorld",
@@ -19,42 +19,50 @@
         "enablePullDownRefresh": false
       }
     },
-	{
-	  "path": "pages/News/index",
-	  "style": {
-	    "navigationBarTitleText": "消息"
-	  }
-	},
-	{
-		"path": "pages/Trends/index",
-		"style": {
-		  "navigationBarTitleText": "动态"
-		}
-	},
-	{
-		"path": "pages/Publish/index",
-		"style": {
-		  "navigationBarTitleText": "发布"
-		}
-	},
-	{
-		"path": "pages/Match/index",
-		"style": {
-		  "navigationBarTitleText": "匹配"
-		}
-	},
-	{
-		"path": "pages/Mine/index",
-		"style": {
-		  "navigationBarTitleText": "我的"
-		}
-	}
+    {
+      "path": "pages/DynamicGround/index",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/News/index",
+      "style": {
+        "navigationBarTitleText": "消息"
+      }
+    },
+    {
+      "path": "pages/Trends/index",
+      "style": {
+        "navigationBarTitleText": "动态"
+      }
+    },
+    {
+      "path": "pages/Publish/index",
+      "style": {
+        "navigationBarTitleText": "发布"
+      }
+    },
+    {
+      "path": "pages/Match/index",
+      "style": {
+        "navigationBarTitleText": "匹配"
+      }
+    },
+    {
+      "path": "pages/Mine/index",
+      "style": {
+        "navigationBarTitleText": "我的"
+      }
+    }
   ],
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
+    // "navigationStyle": "custom"
   },
   "condition": {
     //模式配置，仅开发期间生效
@@ -64,6 +72,10 @@
         "name": "", //模式名称
         "path": "pages/UserCenter/index", //启动页面，必选
         "query": "" //启动参数，在页面的onLoad函数里面得到
+      },
+      {
+        "name": "",
+        "path": "pages/DynamicGround/index"
       }
     ]
   },
@@ -76,35 +88,35 @@
     }
   },
   "tabBar": {
-  	"color": "#7A7E83",
-  	"selectedColor": "#3cc51f",
-  	"borderStyle": "black",
-  	"backgroundColor": "#ffffff",
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
     "list": [
       {
         "pagePath": "pages/News/index",
         "text": "消息",
-      	"iconPath": "static/img/tarBar/content.png"
+        "iconPath": "static/img/tarBar/content.png"
       },
       {
-		"pagePath": "pages/Trends/index",
-		"text": "动态",
-		"iconPath": "static/img/tarBar/action.png"
+        "pagePath": "pages/Trends/index",
+        "text": "动态",
+        "iconPath": "static/img/tarBar/action.png"
       },
       {
-		"pagePath": "pages/Publish/index",
-		"text": "发布",
-		"iconPath": "static/img/tarBar/add.png"
+        "pagePath": "pages/Publish/index",
+        "text": "发布",
+        "iconPath": "static/img/tarBar/add.png"
       },
       {
-		"pagePath": "pages/Match/index",
-		"text": "匹配",
-		"iconPath": "static/img/tarBar/match.png"
+        "pagePath": "pages/Match/index",
+        "text": "匹配",
+        "iconPath": "static/img/tarBar/match.png"
       },
       {
-		"pagePath": "pages/Mine/index",
-		"text": "我的",
-		"iconPath": "static/img/tarBar/home.png"
+        "pagePath": "pages/Mine/index",
+        "text": "我的",
+        "iconPath": "static/img/tarBar/home.png"
       }
     ]
   }
