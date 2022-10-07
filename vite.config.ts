@@ -16,10 +16,10 @@ export default defineConfig({
     cors: true,
     port: 6900,
     proxy: {
-      '/api': {
-        target: 'https://a1.cnblogs.com',
+      '/campus_api': {
+        target: 'https://mock.mengxuegu.com/mock/633edb39b316cf5b3d7e6291/',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        // rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   },
