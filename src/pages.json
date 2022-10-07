@@ -12,7 +12,19 @@
         "navigationBarTitleText": "",
         "enablePullDownRefresh": false
       }
-    }
+    },
+	{
+		"path": "pages/ChatList/index",
+		"style": {
+			"navigationBarTitleText": "消息列表"
+		}
+	},
+	{
+		"path": "pages/LabelTheme/index",
+		"style": {
+			"navigationBarTitleText": "标签专栏"
+		}
+	}
   ],
   "globalStyle": {
     "navigationBarBackgroundColor": "#F8F8F8",
