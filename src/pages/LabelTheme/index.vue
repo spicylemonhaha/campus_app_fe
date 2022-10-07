@@ -10,7 +10,9 @@
       </view>
       <view class="number">
         <text
-          >{{ join }}W人参与&nbsp;&nbsp;|&nbsp;&nbsp;{{ content }}个内容</text
+          >{{ join }}W人参与&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{{
+            content
+          }}个内容</text
         >
       </view>
     </view>
