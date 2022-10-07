@@ -14,8 +14,20 @@
   </view>
   <view class="empty"></view>
   <view class="btn-wrap">
-    <view class="btn-like"><text class="iconfont icon-aixintongdao" style="color: red; font-size: 18px; margin-right: 10rpx;"></text>关注</view>
-    <view class="btn-chat"><text class="iconfont icon-icon" style="color: #0f9efe; font-size: 18px; margin-right: 10rpx;"></text> 发起聊天</view>
+    <view class="btn-like"
+      ><text
+        class="iconfont icon-aixintongdao"
+        style="color: red; font-size: 18px; margin-right: 10rpx"
+      ></text
+      >关注</view
+    >
+    <view class="btn-chat"
+      ><text
+        class="iconfont icon-icon"
+        style="color: #0f9efe; font-size: 18px; margin-right: 10rpx"
+      ></text>
+      发起聊天</view
+    >
   </view>
 </template>
 
@@ -64,9 +76,9 @@ const baseInfo = {
   age: 20,
   height: '177',
   constellation: '双子座',
-  location: '河南 郑州',
+  school: '家里蹲大学',
   title: ['努力学习', '学好前端', '加油'],
-  sex:'男'
+  sex: '男',
 }
 </script>
 

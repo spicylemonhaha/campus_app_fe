@@ -64,9 +64,7 @@
           v-else-if="baseInfo.sex == '女'"
         ></text>
       </view>
-      <view class="position iconfont icon-weizhi">
-        {{ baseInfo.location }}</view
-      >
+      <view class="position iconfont icon-weizhi"> {{ baseInfo.school }}</view>
     </view>
     <view class="ageWrap">
       <view class="age">{{ baseInfo.age }}岁</view>
@@ -88,7 +86,7 @@ interface baseInfo {
   age: number
   height: string
   constellation: string
-  location: string
+  school: string
   title: string[]
   sex: string
 }

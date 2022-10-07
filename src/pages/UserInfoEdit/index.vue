@@ -24,7 +24,7 @@
       <view class="name"
         >不负韶华 <text class="iconfont icon-xingbie-nan"></text
       ></view>
-      <view class="position iconfont icon-weizhi"> 河南 郑州</view>
+      <view class="position iconfont icon-weizhi"> 家里蹲大学</view>
     </view>
     <view class="ageWrap">
       <view class="age">20岁</view>
@@ -141,7 +141,7 @@ page {
   top: 18rpx;
   width: 15rpx;
   height: 30rpx;
-  background-color: rgb(89,208,255);
+  background-color: rgb(89, 208, 255);
 }
 
 .detailWrap .basicInfo .basic1 {
@@ -169,6 +169,7 @@ page {
   height: 70rpx;
   width: 100%;
   display: flex;
+  position: relative;
 }
 
 .profileHead {
@@ -187,9 +188,9 @@ page {
 }
 
 .detailWrap .nameWrap .position {
-  position: relative;
+  position: absolute;
   font-size: 24rpx;
-  left: 270rpx;
+  right: 20rpx;
   top: 38rpx;
 }
 
