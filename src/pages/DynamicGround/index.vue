@@ -40,10 +40,9 @@ const content = '一个人的黄昏'
 </script>
 
 <style scoped>
-  page {
+page {
   background-color: #f3f4f8;
-
-  }
+}
 .ground-box {
   height: 100vh;
   padding: 0 8px;
