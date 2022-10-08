@@ -47,8 +47,9 @@
                 class="uploadImg"
                 limit="1"
                 fileMediatype="image"
-                :del-icon="false"
                 @select="select"
+                @delete="deleteImg"
+                :del-icon="true"
                 :image-styles="imageStyles"
               ></uni-file-picker>
             </view>
@@ -67,7 +68,7 @@ interface Output {
   school: string
   major: string
   stuId: string
-  imgData: any
+  imgData: string
 }
 const imageStyles = {
   height: 300,
@@ -95,21 +96,16 @@ function formCheck(
   }
   return false
 }
-var base64Img: any
+var imgName = ''
+var uploadSuccess = false
 const select = (e: any) => {
-  let a = new FileReader()
-  a.addEventListener(
-    'load',
-    function () {
-      base64Img = a.result
-    },
-    false
-  )
-  var blob = new Blob(e.tempFilePaths)
-  a.readAsDataURL(blob)
+  imgName = e.tempFiles[0].name
   uploadSuccess = true
 }
-var uploadSuccess = false
+const deleteImg = (e: any) => {
+  imgName = ''
+  uploadSuccess = false
+}
 const formSubmit = (e: any) => {
   // console.log('form发生了submit事件，携带数据为：' + JSON.stringify(e.detail.value))
   const { name, school, major, stuId } = e.detail.value
@@ -122,7 +118,7 @@ const formSubmit = (e: any) => {
       school: formdata.school,
       major: formdata.major,
       stuId: formdata.stuId,
-      imgData: base64Img,
+      imgData: imgName,
     }
     console.log(output)
   } else {
