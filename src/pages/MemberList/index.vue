@@ -3,7 +3,6 @@
 <!-- eslint-disable vue/no-deprecated-filter -->
 <template>
   <view class="container">
-    <base-nav-bar></base-nav-bar>
     <scroll-view scroll-y="true">
       <uni-list-chat
         :clickable="true"

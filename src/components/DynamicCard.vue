@@ -1,8 +1,8 @@
 <template>
-  <view class="dynamic-card">
+  <view class="dynamic-card" ref="dynamicWrap" @click="toDynamicDetail">
     <view class="user-box">
       <view class="user-info">
-        <view class="user-avatar">
+        <view class="user-avatar" @click="showUserInfo">
           <u-avatar size="38" :src="userInfo.avatar"></u-avatar>
         </view>
         <view>
@@ -87,6 +87,7 @@ const props = withDefaults(defineProps<Props>(), {})
 const { imglist: list, userInfo, content } = props
 const colum = ref<number>()
 const isOne = ref<boolean>()
+const dynamicWrap = ref(null)
 onMounted(() => {
   if (list.length === 1) {
     colum.value = 1.75
@@ -96,6 +97,21 @@ onMounted(() => {
     isOne.value = false
   }
 })
+const toDynamicDetail = () => {
+  // dynamicWrap.value && dynamicWrap.addEventListener('click',()=>{
+  //   console.log(123123123);
+  // })
+  // console.log('------------>',dynamicWrap.value);
+
+  uni.navigateTo({
+    url: '/pages/DynamicDetail/index',
+  })
+}
+const showUserInfo = () => {
+  uni.navigateTo({
+    url: '/pages/UserInfoShow/index',
+  })
+}
 </script>
 
 <style scoped>

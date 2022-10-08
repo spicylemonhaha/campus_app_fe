@@ -5,16 +5,6 @@
 <!-- eslint-disable vue/no-v-text-v-html-on-component -->
 <template>
   <view class="chat-room container">
-    <uni-nav-bar
-      shadow
-      fixed
-      left-icon="left"
-      right-icon="more-filled"
-      @clickRight="actionHandle"
-      @clickLeft="routeBack"
-      :title="`${convInfo.name}[${convInfo.id}]`"
-    >
-    </uni-nav-bar>
     <view class="chat-warp" @click="isOpenBar = false">
       <view class="chat-content">
         <view

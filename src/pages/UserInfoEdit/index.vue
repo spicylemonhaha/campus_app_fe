@@ -31,11 +31,6 @@
       <view class="height">177cm</view>
       <view class="star">双子座</view>
     </view>
-    <view class="lableWrap">
-      <view class="lable"> 学好前端 </view>
-      <view class="lable"> 学好前端 </view>
-      <view class="lable"> 学好 </view>
-    </view>
   </view>
   <Card :cardDataArr="cardDataArr"></Card>
 </template>
@@ -199,7 +194,6 @@ page {
   width: 100%;
   display: flex;
   position: relative;
-  border-bottom: 1px solid #ccc;
   margin-top: 50rpx;
   margin-left: 5rpx;
 }
