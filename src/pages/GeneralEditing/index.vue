@@ -49,11 +49,7 @@
         ></uni-easyinput>
       </view>
     </view>
-    <button
-      type="primary"
-      style="margin-top: 30rpx; width: 50%"
-      @click="submit"
-    >
+    <button type="primary" style="margin-top: 30rpx; width: 50%" @click="haha">
       提交
     </button>
   </view>
@@ -61,9 +57,18 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { addCommentLike } from '../../api'
 type tagType = {
   type: string
   content: string
+}
+const haha = async () => {
+  const res = await addCommentLike({
+    dynamicId: '123',
+    commentId: '123',
+    userId: '123',
+  })
+  console.log(res)
 }
 const value = ref('')
 const mock = ref([
