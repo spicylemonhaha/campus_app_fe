@@ -35,7 +35,7 @@
     {
       "path": "pages/MemberList/index",
       "style": {
-        "navigationBarTitleText": "列表"
+        "navigationBarTitleText": "消息列表"
       }
     },
     {
@@ -77,7 +77,7 @@
     {
       "path": "pages/UserCenter/index",
       "style": {
-        "navigationBarTitleText": "",
+        "navigationBarTitleText": "个人中心",
         "enablePullDownRefresh": false
       }
     },
@@ -101,21 +101,15 @@
       }
     },
     {
-      "path": "pages/News/index",
+      "path": "pages/DynamicDetail/index",
       "style": {
-        "navigationBarTitleText": "消息"
+        "navigationBarTitleText": "动态详情"
       }
     },
     {
       "path": "pages/Trends/index",
       "style": {
         "navigationBarTitleText": "动态"
-      }
-    },
-    {
-      "path": "pages/Publish/index",
-      "style": {
-        "navigationBarTitleText": "发布"
       }
     },
     {
@@ -182,7 +176,7 @@
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "pagePath": "pages/News/index",
+        "pagePath": "pages/MemberList/index",
         "text": "消息",
         "iconPath": "static/img/tarBar/content.png"
       },
@@ -192,7 +186,7 @@
         "iconPath": "static/img/tarBar/action.png"
       },
       {
-        "pagePath": "pages/Publish/index",
+        "pagePath": "pages/PublishTrends/index",
         "text": "发布",
         "iconPath": "static/img/tarBar/add.png"
       },
@@ -202,7 +196,7 @@
         "iconPath": "static/img/tarBar/match.png"
       },
       {
-        "pagePath": "pages/Mine/index",
+        "pagePath": "pages/UserCenter/index",
         "text": "我的",
         "iconPath": "static/img/tarBar/home.png"
       }

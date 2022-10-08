@@ -20,6 +20,7 @@
         <image
           src="../../static/logo.png"
           style="width: 60rpx; height: 60rpx; border-radius: 60rpx"
+          @click="handlerAvatar"
         ></image>
         <span style="margin-left: 20rpx; font-size: 8rpx">等xxx人点赞</span>
       </view>
@@ -226,6 +227,31 @@ const add = function (event: Event, comment: commentType) {
 const sendMessage = function () {
   console.log(currentComment.value)
   console.log(message.value)
+  for (let i = 0; i < comments.value.length; i++) {
+    if (comments.value[i].name === currentComment.value.name) {
+      console.log(comments.value[i].name, currentComment.value.name)
+      if (!comments.value[i].otherComment) {
+        comments.value[i].otherComment = []
+      }
+      comments.value[i].otherComment.push({
+        name: '我',
+        info: {
+          age: '02年',
+          address: '杭州',
+          edu: '博士',
+          job: 'IT/互联网',
+        },
+        content: message.value,
+        zans: 1,
+      })
+    }
+  }
+}
+const handlerAvatar = () => {
+  console.log(123)
+  uni.navigateTo({
+    url: '/pages/UserInfoShow/index',
+  })
 }
 </script>
 

@@ -8,7 +8,7 @@
     <view class="basicInfo">
       <view class="icon"></view>
       <view class="basic1"> 基本资料</view>
-      <navigator class="edit">编辑</navigator>
+      <navigator url="../BaseInfoEdit/index" class="edit">编辑</navigator>
     </view>
     <view class="nameWrap">
       <view class="example-body profileHead">
@@ -30,11 +30,6 @@
       <view class="age">20岁</view>
       <view class="height">177cm</view>
       <view class="star">双子座</view>
-    </view>
-    <view class="lableWrap">
-      <view class="lable"> 学好前端 </view>
-      <view class="lable"> 学好前端 </view>
-      <view class="lable"> 学好 </view>
     </view>
   </view>
   <Card :cardDataArr="cardDataArr"></Card>
@@ -199,7 +194,6 @@ page {
   width: 100%;
   display: flex;
   position: relative;
-  border-bottom: 1px solid #ccc;
   margin-top: 50rpx;
   margin-left: 5rpx;
 }
