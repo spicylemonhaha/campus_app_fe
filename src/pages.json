@@ -130,10 +130,10 @@
       "style": {
         "navigationBarTitleText": "我的"
       }
-<<<<<<< HEAD
+
     }
-],
-=======
+]
+
     },
 	{
 		"path": "pages/FollowerList/index",
@@ -142,7 +142,7 @@
 		}
 	}
   ],
->>>>>>> f84d69fc4481284c1bfff6b72311ae970afb66c9
+
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",

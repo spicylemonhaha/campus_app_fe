@@ -6,7 +6,6 @@
 			:style="'top:'+statusBarHeight+'px;'"
 		>
 			<uni-icons
-			  hover-class="bg-light"
 			  custom-prefix="iconfont"
 			  color="#54536E"
 			  type="icon-guanbi"
