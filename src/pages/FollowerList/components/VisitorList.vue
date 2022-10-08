@@ -1,9 +1,9 @@
 <template>
   <view class="list">
-    <text>我的粉丝（共{{ follower.length }}人）</text>
+    <text>最近访问（共{{ visitor.length }}人）</text>
     <uni-list>
       <follow-list-item
-        v-for="item in follower"
+        v-for="item in visitor"
         :item="item"
         :key="item"
       ></follow-list-item>
@@ -14,23 +14,22 @@
 <script setup lang="ts">
 import uniList from '@dcloudio/uni-ui/lib/uni-list/uni-list.vue'
 import FollowListItem from '../components/FollowListItem'
-import { getFollowerList } from '../../../api'
+import { getVisitorList } from '../../../api'
 import { reactive } from 'vue'
 import { onShow } from '@dcloudio/uni-app'
-
-let follower = reactive([])
-const getFollower = () => {
-  getFollowerList({
+let visitor = reactive([])
+function getVisitor() {
+  getVisitorList({
     userId: 'Jack',
-    type: 'following',
+    type: 'visitor',
   }).then((res) => {
-    if (follower.toString() !== res.data.userList.toString()) {
-      follower.push(...res.data.userList)
+    if (visitor.toString() !== res.data.userList.toString()) {
+      visitor.push(...res.data.userList)
     }
   })
 }
 onShow(() => {
-  getFollower()
+  getVisitor()
 })
 </script>
 
