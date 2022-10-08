@@ -11,24 +11,51 @@
       <view class="number">
         <text
           >{{ join }}W人参与&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{{
-            content
+            contentNumber
           }}个内容</text
         >
       </view>
     </view>
-    <dynamic class="dynamic"></dynamic>
+    <dynamic
+      class="dynamic"
+      :userInfo="info"
+      :imglist="imgList"
+      :content="content"
+    ></dynamic>
   </view>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { reactive, ref } from 'vue'
 import Dynamic from './components/Dynamic.vue'
-const title = ref('#校园无语瞬间')
-const desInfo = ref(
+import { getDynamicList } from '../../api'
+import { onShow } from '@dcloudio/uni-app'
+const title: string = ref('')
+const join: number = ref(0)
+const contentNumber: number = ref(0)
+const desInfo: string = ref(
   '脱单的小伙伴们，把狗粮狠狠地撒在这里吧~脱单的小伙伴们，把狗粮狠狠地撒在这里吧~'
 )
-const join = ref(1.1)
-const content = ref(77)
+const info = reactive({})
+const imgList = reactive([])
+const content = ref('我可真是无语啊')
+onShow(() => {
+  getDynamicList({
+    tag: '校园无语瞬间',
+    dynamicType: '热门',
+  }).then((res) => {
+    console.log(res)
+    join.value = res.ammountPeople / 10000
+    let data = res.data.dynamicList[0]
+    title.value = data.tag
+    contentNumber.value = data.commentAmount
+    info.name = data.userName
+    info.avatar = 'https://cdn.uviewui.com/uview/album/2.jpg'
+    if (imgList.toString() !== data.contentPicture.toString()) {
+      imgList.push(...data.contentPicture)
+    }
+  })
+})
 </script>
 
 <style scoped>

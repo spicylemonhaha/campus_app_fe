@@ -1,6 +1,8 @@
 <template>
   <view class="detail">
-    <image src="../../static/logo.png" class="image-one"></image>
+    <image src="../../static/logo.png" class="image-one" @click="handlerAvatar"
+      >111</image
+    >
     <view class="information">
       <view style="flex: 2; margin-left: 10rpx">{{ userName }}</view>
       <view class="in">
@@ -35,6 +37,14 @@ export default {
     },
     userInfo: {
       type: Array,
+    },
+  },
+  methods: {
+    handlerAvatar() {
+      console.log(123123)
+      uni.navigateTo({
+        url: '/pages/UserInfoShow/index',
+      })
     },
   },
 }

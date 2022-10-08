@@ -20,25 +20,24 @@
 
 <script setup lang="ts">
 import DynamicCard from '../../../components/DynamicCard.vue'
-import { ref } from 'vue'
+import { reactive, ref } from 'vue'
+import { onShow } from '@dcloudio/uni-app'
+export interface Props {
+  imglist: string[]
+  userInfo: UserInfo
+  content: string
+}
+export interface UserInfo {
+  name: string
+  avatar: string
+}
+const props = withDefaults(defineProps<Props>(), {})
+const { imglist, userInfo, content } = props
 const kindList = ref(['热门', '最新'])
 const active = ref('热门')
 const changeTabColor = (tabName: string) => {
   active.value = tabName
 }
-const imglist = [
-  'https://images.unsplash.com/photo-1664434341235-f77a94e1a26c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8NnNNVmpUTFNrZVF8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60',
-  'https://images.unsplash.com/photo-1664434341235-f77a94e1a26c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8NnNNVmpUTFNrZVF8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60',
-  'https://images.unsplash.com/photo-1664434341235-f77a94e1a26c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8NnNNVmpUTFNrZVF8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60',
-  'https://images.unsplash.com/photo-1664434341235-f77a94e1a26c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8NnNNVmpUTFNrZVF8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60',
-  'https://images.unsplash.com/photo-1664434341235-f77a94e1a26c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8NnNNVmpUTFNrZVF8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60',
-]
-const userInfo = {
-  name: '不负韶华',
-  avatar: 'https://cdn.uviewui.com/uview/album/2.jpg',
-}
-const content =
-  '我可真是无语啊！我可真是无语啊！我可真是无语啊！我可真是无语啊！我可真是无语啊！我可真是无语啊！我可真是无语啊！'
 </script>
 
 <style scoped>

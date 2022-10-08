@@ -24,8 +24,8 @@ export default defineConfig({
       },
 	  // 测试环境 （发布上线时切换为线上环境）
 	  '/api': {
-		  target: 'http://127.0.0.1:8083/',
-		  // target:'https://campus-rd.koto-marvelous.com/',
+		  // target: 'http://127.0.0.1:8083/',
+		  target:'https://campus-rd.koto-marvelous.com/',
 		  changeOrigin: true,
 	  }
     },
