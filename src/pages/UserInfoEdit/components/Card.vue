@@ -4,10 +4,12 @@
       <view class="introduceHead">
         <view class="icon"></view>
         <view class="aboutMe">{{ item.title }}</view>
-        <navigator url="../personalEdit/index" class="edit">编辑</navigator>
+        <navigator url="/pages/GeneralEditing/index" class="edit"
+          >编辑</navigator
+        >
       </view>
       <view
-        v-if="item.content==''"
+        v-if="item.content == ''"
         class="introduceMyself"
         style="font-size: 26rpx; color: rgb(177, 175, 175)"
       >
@@ -58,7 +60,7 @@ const props = withDefaults(defineProps<cardProps>(), {})
   top: 18rpx;
   width: 15rpx;
   height: 30rpx;
-  background-color: rgb(89,208,255);
+  background-color: rgb(89, 208, 255);
 }
 
 .introduceWrap .introduceHead .aboutMe {

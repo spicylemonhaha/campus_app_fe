@@ -8,7 +8,7 @@
     <view class="basicInfo">
       <view class="icon"></view>
       <view class="basic1"> 基本资料</view>
-      <navigator class="edit">编辑</navigator>
+      <navigator url="../BaseInfoEdit/index" class="edit">编辑</navigator>
     </view>
     <view class="nameWrap">
       <view class="example-body profileHead">

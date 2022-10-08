@@ -36,7 +36,7 @@
           >#校园无语瞬间</navigator
         >
         <navigator
-          url="../talkAbout/talkAbout"
+          url="/pages/TopicSquare/index"
           class="contentT iconfont icon-youjiantou"
           >更多话题</navigator
         >
@@ -47,7 +47,6 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-
 </script>
 
 <style scoped>

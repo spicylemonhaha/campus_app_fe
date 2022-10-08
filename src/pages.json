@@ -63,7 +63,7 @@
     {
       "path": "pages/UserCenter/index",
       "style": {
-        "navigationBarTitleText": "",
+        "navigationBarTitleText": "个人中心",
         "enablePullDownRefresh": false
       }
     },
@@ -174,7 +174,7 @@
         "iconPath": "static/img/tarBar/match.png"
       },
       {
-        "pagePath": "pages/Mine/index",
+        "pagePath": "pages/UserCenter/index",
         "text": "我的",
         "iconPath": "static/img/tarBar/home.png"
       }

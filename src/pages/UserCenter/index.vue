@@ -24,6 +24,7 @@
           text="编辑"
           color="#575555"
           size="small"
+          @click="handlerEdic"
         ></u-button
       ></view>
     </view>
@@ -60,6 +61,12 @@ const visitCount = ref({
   data: 44,
   title: '最近来访',
 })
+// 点击编辑按钮-页面跳转
+const handlerEdic = () => {
+  uni.navigateTo({
+    url: '../UserInfoEdit/index',
+  })
+}
 </script>
 
 <style scoped>
