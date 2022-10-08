@@ -68,7 +68,7 @@ interface Output {
   school: string
   major: string
   stuId: string
-  imgData: any
+  imgData: string
 }
 const imageStyles = {
   height: 300,

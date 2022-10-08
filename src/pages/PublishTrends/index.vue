@@ -48,9 +48,9 @@ const imageStyles = {
     style: 'solid',
   },
 }
-let imageValue = reactive([])
-const text = ref('')
-const myTag = ref('')
+let imageValue = reactive<Array<string>>([])
+const text = ref<string>('')
+const myTag = ref<string>('')
 // const pop = ref(null)
 const imgUpload = ref(null)
 function deleteImg(e: any) {
@@ -89,7 +89,7 @@ const getTagsAPI = async () => {
 }
 const tags = reactive([])
 getTagsAPI().then((value) => {
-  value.forEach((item) => {
+  value.forEach((item: string) => {
     tags.push(item)
   })
 })
