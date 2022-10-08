@@ -1,9 +1,7 @@
 <template>
   <view>
-    <PublishTrends></PublishTrends>
-    <!-- <IdentityProof></IdentityProof> -->
-    <!-- <UserCenter></UserCenter> -->
-    <!-- <DynamicGround></DynamicGround> -->
+    <UserCenter></UserCenter>
+    <DynamicGround></DynamicGround>
   </view>
 </template>
 

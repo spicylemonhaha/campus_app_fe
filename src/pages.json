@@ -1,29 +1,53 @@
 {
   "pages": [
-	{
-	  "path": "pages/LoginTemp/index",
-	  "style": {
-		  "navigationBarTitleText": "登录"
-	  }
-	},
-	{
-	  "path": "pages/Action/index",
-	  "style": {
-		  "navigationBarTitleText": "创建聊天"
-	  }
-	},
-	{
-	  "path": "pages/Chat/index",
-	  "style": {
-	  	  "navigationBarTitleText": "聊天"
-	  }
-	},
-	{
-	  "path": "pages/MemberList/index",
-	  "style": {
-		  "navigationBarTitleText": "列表"
-	  }
-	},
+    {
+      "path": "pages/LoginTemp/index",
+      "style": {
+        "navigationBarTitleText": "登录"
+      }
+    },
+    {
+      "path": "pages/Action/index",
+      "style": {
+        "navigationBarTitleText": "创建聊天"
+      }
+    },
+    {
+      "path": "pages/Chat/index",
+      "style": {
+        "navigationBarTitleText": "聊天"
+      }
+    },
+    {
+      "path": "pages/MemberList/index",
+      "style": {
+        "navigationBarTitleText": "列表"
+      }
+    },
+    {
+      "path": "pages/TopicSquare/index",
+      "style": {
+        "navigationBarTitleText": "话题广场"
+      }
+    },
+    {
+      "path": "pages/UserInfoShow/index",
+      "style": {
+        "navigationBarTitleText": "个人信息"
+      }
+    },
+    {
+      "path": "pages/BaseInfoEdit/index",
+      "style": {
+        "navigationBarTitleText": "基本信息"
+      }
+    },
+    {
+      "path": "pages/UserInfoEdit/index",
+      "style": {
+        "navigationBarTitleText": "信息填写"
+      }
+    },
     {
       "path": "pages/GeneralEditing/index",
       "style": {
@@ -58,7 +82,7 @@
     {
       "path": "pages/DynamicGround/index",
       "style": {
-        "navigationBarTitleText": "",
+        "navigationBarTitleText": "话题广场",
         "enablePullDownRefresh": false
       }
     },
