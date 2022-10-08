@@ -10,10 +10,7 @@
         </text>
       </view>
     </view>
-    <follower-list
-      :following="follow.following"
-      :type="currentType"
-    ></follower-list>
+    <follower-list :following="show"></follower-list>
   </view>
 </template>
 
@@ -29,20 +26,18 @@ let follow = {
   visitor: reactive([]),
 }
 
-// let following = reactive([])
-// let follower = reactive([])
-// let visitor = reactive([])
 const getFollowing = () => {
   getFollowingList({
     userId: 'Jack',
     type: 'following',
   }).then((res) => {
     console.log(res)
-    // if (follow.following.toString() !== res.data.userList.toString()) {
-    //   follow.following.push(...res.data.userList)
-    // }
+    if (follow.following.toString() !== res.data.userList.toString()) {
+      follow.following.push(...res.data.userList)
+    }
   })
 }
+
 onShow(() => {
   getFollowing()
 })
@@ -67,6 +62,7 @@ const getVisitor = () => {
     }
   })
 }
+
 const kindList = ref(['关注', '粉丝', '最近访问'])
 const active = ref('关注')
 let currentType = ref('following')

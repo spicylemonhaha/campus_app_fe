@@ -3,7 +3,7 @@
     <uni-list-item class="list-item">
       <template v-slot:header>
         <view class="slot-box">
-          <img :src="item.avatar" class="slot-image" />
+          <img :src="item.avator" class="slot-image" />
         </view>
       </template>
       <template v-slot:body>
@@ -29,8 +29,10 @@ export interface Item {
   userName: string
   isFollowing: boolean
 }
+
 const props = withDefaults(defineProps<Props>(), {})
 const { item } = props
+console.log(item.avator)
 let isFollow = computed(() => {
   return item.isFollowing
 })

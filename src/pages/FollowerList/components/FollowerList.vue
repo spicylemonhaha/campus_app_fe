@@ -25,7 +25,7 @@ export interface Following {
   isFollowing: boolean
 }
 let props = withDefaults(defineProps<Props>(), {})
-let { following, type } = props
+let { following } = props
 </script>
 
 <style scoped>
