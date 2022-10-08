@@ -80,14 +80,27 @@ function hasTag() {
     return false
   }
 }
+var tags = reactive([])
 const getTagsAPI = async () => {
   const res = await getTagsReq()
-  let allTagsList = res.data.topicList.recentTopic.concat(
-    res.data.topicList.historyTopic
-  )
-  return allTagsList
+  console.log('res', res)
+  if (res == undefined) {
+    return [
+      '#立个脱单flag',
+      '#第一条动态',
+      '#寻找那个Ta',
+      '#失物招领处',
+      '#如何看待丁克',
+      '#单身原因自查',
+      '#男生请回答呀',
+    ]
+  } else {
+    let allTagsList = res.data.topicList.recentTopic.concat(
+      res.data.topicList.historyTopic
+    )
+    return allTagsList
+  }
 }
-const tags = reactive([])
 getTagsAPI().then((value) => {
   value.forEach((item: string) => {
     tags.push(item)
