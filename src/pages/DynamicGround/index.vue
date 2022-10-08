@@ -1,4 +1,5 @@
 <template>
+  <HotTopics></HotTopics>
   <view class="ground-box">
     <view class="kind-box">
       <view class="kind-content" v-for="item in kindList" :key="item">
@@ -16,6 +17,7 @@
 
 <script setup lang="ts">
 import DynamicCard from '../../components/DynamicCard.vue'
+import HotTopics from '../../components/HotTopics.vue'
 import { ref } from 'vue'
 
 const kindList = ref(['最新', '推荐', '同校'])
@@ -38,6 +40,9 @@ const content = '一个人的黄昏'
 </script>
 
 <style scoped>
+page {
+  background-color: #f3f4f8;
+}
 .ground-box {
   height: 100vh;
   padding: 0 8px;
