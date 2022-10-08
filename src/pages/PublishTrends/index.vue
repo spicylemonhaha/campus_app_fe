@@ -37,6 +37,8 @@
 import uniFilePicker from '@dcloudio/uni-ui/lib/uni-file-picker/uni-file-picker.vue'
 import { ref, reactive } from 'vue'
 import TagChoice from './components/TagChoice.vue'
+import { publishTrends } from '../../api/'
+import { getTagsReq } from '../../api/'
 const imageStyles = {
   height: 200,
   width: 200,
@@ -46,17 +48,16 @@ const imageStyles = {
     style: 'solid',
   },
 }
-let imageValue = reactive([])
-const text = ref('')
-const myTag = ref('')
-const tags = reactive(['这是一个话题', 'bbb'])
+let imageValue = reactive<Array<string>>([])
+const text = ref<string>('')
+const myTag = ref<string>('')
 // const pop = ref(null)
 const imgUpload = ref(null)
 function deleteImg(e: any) {
-  imageValue = imageValue.filter((x) => x !== e.tempFilePath)
+  imageValue = imageValue.filter((x) => x !== e.tempFile.name)
 }
 function uploadImg(e: any) {
-  imageValue.push(e.tempFilePaths[0])
+  imageValue.push(e.tempFiles[0].name)
 }
 function hasText() {
   if (text.value !== '') {
@@ -79,25 +80,79 @@ function hasTag() {
     return false
   }
 }
+var tags = reactive([])
+const getTagsAPI = async () => {
+  const res = await getTagsReq()
+  console.log('res', res)
+  if (res == undefined) {
+    return [
+      '#立个脱单flag',
+      '#第一条动态',
+      '#寻找那个Ta',
+      '#失物招领处',
+      '#如何看待丁克',
+      '#单身原因自查',
+      '#男生请回答呀',
+    ]
+  } else {
+    let allTagsList = res.data.topicList.recentTopic.concat(
+      res.data.topicList.historyTopic
+    )
+    return allTagsList
+  }
+}
+getTagsAPI().then((value) => {
+  value.forEach((item: string) => {
+    tags.push(item)
+  })
+})
+
+const submitTrendAPI = async (data: string[]) => {
+  const res = await publishTrends(data)
+  console.log(res)
+}
 var submitTrend = function submitTrend() {
   if (hasText()) {
     if (hasTag()) {
       uni.showModal({
-        content: '请取消话题',
+        content: '使用话题功能时仅能发布图片',
         showCancel: false,
       })
     } else {
-      var output2 = { text: text.value, imgValue: imageValue[0] }
-      console.log(output2)
-      console.log('成功发布了', text.value, imageValue)
+      if (hasImg()) {
+        let imgString = imageValue.join('&')
+        var output2 = {
+          userId: '111',
+          contentText: text.value,
+          contentPicture: imgString,
+          tag: '',
+        }
+        submitTrendAPI(output2)
+        console.log(output2)
+      } else {
+        var output3 = {
+          userId: '111',
+          contentText: text.value,
+          contentPicture: '',
+          tag: '',
+        }
+        submitTrendAPI(output3)
+        console.log(output3)
+      }
     }
   }
   if (!hasText()) {
     console.log(hasImg(), hasTag())
     if (hasImg() && hasTag()) {
-      var output1 = { imgValue: imageValue[0], tag: myTag.value }
+      let imgString = imageValue.join('&')
+      var output1 = {
+        userId: '111',
+        contentText: '',
+        contentPicture: imgString,
+        tag: myTag.value,
+      }
+      submitTrendAPI(output1)
       console.log(output1)
-      console.log('成功发布了', imageValue, myTag.value)
     }
     if (hasImg() && !hasTag()) {
       uni.showModal({
