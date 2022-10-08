@@ -23,6 +23,16 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import Dynamic from './components/Dynamic.vue'
+import { getDynamicList } from '../../api'
+import { onShow } from '@dcloudio/uni-app'
+onShow(() => {
+  getDynamicList({
+    tag: '校园无语瞬间',
+    dynamicType: '热门',
+  }).then((res) => {
+    console.log(res)
+  })
+})
 const title = ref('#校园无语瞬间')
 const desInfo = ref(
   '脱单的小伙伴们，把狗粮狠狠地撒在这里吧~脱单的小伙伴们，把狗粮狠狠地撒在这里吧~'
