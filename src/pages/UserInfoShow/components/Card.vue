@@ -1,6 +1,6 @@
 <template>
   <view v-for="item in cardDataArr" :key="item.title">
-    <view class="introduceWrap" v-if="item.content!=''">
+    <view class="introduceWrap" v-if="item.content != ''">
       <view class="introduceHead">
         <view class="icon"></view>
         <view class="aboutMe">{{ item.title }}</view>
@@ -51,7 +51,7 @@ const props = withDefaults(defineProps<cardProps>(), {})
   top: 18rpx;
   width: 15rpx;
   height: 30rpx;
-  background-color: rgb(89,208,255);
+  background-color: rgb(89, 208, 255);
 }
 
 .introduceWrap .introduceHead .aboutMe {
