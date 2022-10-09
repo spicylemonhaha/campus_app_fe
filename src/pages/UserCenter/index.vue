@@ -29,9 +29,21 @@
       ></view>
     </view>
     <view class="prefer-box">
-      <PreferBar :data="iLike.data" :title="iLike.title"></PreferBar>
-      <PreferBar :data="likeMe.data" :title="likeMe.title"></PreferBar>
-      <PreferBar :data="visitCount.data" :title="visitCount.title"></PreferBar>
+      <PreferBar
+        @click="routeTo"
+        :data="iLike.data"
+        :title="iLike.title"
+      ></PreferBar>
+      <PreferBar
+        @click="routeTo"
+        :data="likeMe.data"
+        :title="likeMe.title"
+      ></PreferBar>
+      <PreferBar
+        @click="routeTo"
+        :data="visitCount.data"
+        :title="visitCount.title"
+      ></PreferBar>
     </view>
     <Bar :barArr="barArr"></Bar>
     <view class="foot">校园号： 1062233</view>
@@ -70,6 +82,11 @@ const handlerEdic = () => {
 const checkToUserShow = () => {
   uni.navigateTo({
     url: '../UserInfoShow/index',
+  })
+}
+const routeTo = () => {
+  uni.navigateTo({
+    url: '../FollowerList/index',
   })
 }
 </script>

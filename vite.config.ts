@@ -16,11 +16,18 @@ export default defineConfig({
     cors: true,
     port: 6900,
     proxy: {
+		//Mock环境
       '/campus_api': {
         target: 'https://mock.mengxuegu.com/mock/633edb39b316cf5b3d7e6291/',
         changeOrigin: true,
         // rewrite: (path) => path.replace(/^\/api/, ''),
       },
+	  // 测试环境 （发布上线时切换为线上环境）
+	  '/api': {
+		  target: 'http://127.0.0.1:8083/',
+		  // target:'https://campus-rd.koto-marvelous.com/',
+		  changeOrigin: true,
+	  }
     },
   },
 })

@@ -8,6 +8,20 @@
       }
     },
     {
+      "path": "pages/login/login",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/MemberList/index",
+      "style": {
+        "navigationBarTitleText": "消息",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "pages/LabelTheme/index",
       "style": {
         "navigationBarTitleText": "话题"
@@ -87,6 +101,7 @@
       }
     }
   ],
+
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
@@ -109,7 +124,7 @@
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "pagePath": "pages/MemberList/iondex",
+        "pagePath": "pages/MemberList/index",
         "text": "消息",
         "iconPath": "static/img/tarBar/content.png"
       },

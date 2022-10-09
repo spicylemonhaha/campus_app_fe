@@ -405,9 +405,6 @@ function checkLoginHook(cb) {
     cb && cb()
     uni.removeStorageSync('userInfo')
     uni.removeStorageSync('token')
-    uni.reLaunch({
-      url: '../pages/match/HelloWorld',
-    })
     store.isLogin = false
   }
 
