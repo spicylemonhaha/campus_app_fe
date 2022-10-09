@@ -9,7 +9,9 @@ import { ZIM } from 'zego-zim-web'
 import { ZIM } from 'zego-zim-miniprogram'
 // #endif
 /* eslint-disable */
-
+// #ifdef APP-PLUS
+import ZIM from '../assets/js_sdk/zego-ZIMUniplugin-JS/lib'
+// #endif
 const zim = ZIM.create(appConfig.appID)
 
 const useStore = defineStore('all', {

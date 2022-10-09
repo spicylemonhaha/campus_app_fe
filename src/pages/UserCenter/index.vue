@@ -1,7 +1,7 @@
 <template>
   <view class="box">
     <view class="user-box">
-      <view class="user-info">
+      <view class="user-info" @click="checkToUserShow">
         <view class="user-avatar">
           <u-avatar size="50" :src="avatarUrl"></u-avatar>
         </view>
@@ -45,7 +45,7 @@ import Bar from './components/Bar.vue'
 import PreferBar from './components/PreferBar.vue'
 const avatarUrl = ref<string>('https://cdn.uviewui.com/uview/album/2.jpg')
 const barArr = [
-  { icon: 'auth', title: '同校认证' },
+  { icon: 'auth', title: '学校认证' },
   { icon: 'hand-up', title: '推荐给好友' },
   { icon: 'icon-fankuijianyi', title: '用户反馈', isCustom: 'iconfont' },
 ]
@@ -67,6 +67,11 @@ const handlerEdic = () => {
     url: '../UserInfoEdit/index',
   })
 }
+const checkToUserShow = () => {
+  uni.navigateTo({
+    url: '../UserInfoShow/index',
+  })
+}
 </script>
 
 <style scoped>
@@ -76,7 +81,8 @@ const handlerEdic = () => {
 
 .box {
   padding: 0 20px;
-  background-color: rgb(234, 237, 249);
+  background-color: #f3f4f8;
+  height: 100vh;
 }
 .user-box {
   display: flex;
