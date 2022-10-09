@@ -29,7 +29,7 @@
         type="textarea"
         v-model="value"
         placeholder="例如:   编程"
-        autoHeight="true"
+        :autoHeight="true"
         maxlength="-1"
       ></uni-easyinput>
     </view>
@@ -43,9 +43,9 @@
           style="margin-left: 5rpx"
           type="textarea"
           value="可以让我们感到充实。当一个人无所事事的时候，内心是比较空虚的，而且想的东西也是非常多的，容易胡思乱想。但是当在无聊闲暇的时间去阅读，那么就会感到人生是饱满的，很多的人生经验和人生道理，在书籍中可以获得，并且能够感受到那种温暖的感觉，觉得人生就应该要去努力追求自己想要的人生。"
-          autoHeight="true"
+          :autoHeight="true"
           maxlength="-1"
-          disabled="true"
+          :disabled="true"
         ></uni-easyinput>
       </view>
     </view>

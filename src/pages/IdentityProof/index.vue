@@ -1,5 +1,4 @@
 <template>
-  <view class="title"> 学历信息认证 </view>
   <view class="box">
     <view class="content">
       <view class="header">

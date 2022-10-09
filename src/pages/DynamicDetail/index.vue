@@ -2,7 +2,11 @@
 <template>
   <view class="content">
     <view class="item">
-      <detail userName="浅浅" :userInfo="userInfo"></detail>
+      <detail
+        userName="浅浅"
+        :userInfo="userInfo"
+        @click="handlerAvatar"
+      ></detail>
       <comment
         :isOther="false"
         content="哈哈哈哈哈哈哈哈哈哈哈哈哈"
@@ -94,7 +98,9 @@
         cancelText="发送"
         @cancel="sendMessage"
       >
-        <uni-icons slot="searchIcon" color="#999999" size="18" type="chat" />
+        <template v-slot:searchIcon>
+          <uni-icons color="#999999" size="18" type="chatboxes" />
+        </template>
       </uni-search-bar>
     </view>
   </view>
@@ -225,8 +231,6 @@ const add = function (event: Event, comment: commentType) {
   comment.zans++
 }
 const sendMessage = function () {
-  console.log(currentComment.value)
-  console.log(message.value)
   for (let i = 0; i < comments.value.length; i++) {
     if (comments.value[i].name === currentComment.value.name) {
       console.log(comments.value[i].name, currentComment.value.name)
@@ -261,7 +265,7 @@ const handlerAvatar = () => {
   width: 100%;
   background-color: white;
   box-sizing: border-box;
-  bottom: 95rpx;
+  bottom: 0px;
 }
 .content {
   display: flex;

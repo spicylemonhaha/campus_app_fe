@@ -1,7 +1,7 @@
 <template>
   <view class="bar-box">
     <view v-for="(item, index) in props.barArr" :key="item.title">
-      <view class="bar-content">
+      <view class="bar-content" @click="changeTo(item)">
         <view class="bar-des">
           <text
             ><uni-icons
@@ -33,6 +33,13 @@ interface barObj {
   isCustom?: string
 }
 const props = withDefaults(defineProps<Props>(), {})
+const changeTo = (item: any) => {
+  if (item.title === '学校认证') {
+    uni.navigateTo({
+      url: '../IdentityProof/index',
+    })
+  }
+}
 </script>
 
 <style scoped>

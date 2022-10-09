@@ -15,6 +15,7 @@ interface ResultData<T = any> extends Result {
 }
 // 记得更改这个位置，如果有baseurl的话proxy不会进行替换，所以开发时可以填空字符串
 const URL = process.env.NODE_ENV == 'development' ? '' : ''
+import axiosAdapterUniapp from 'axios-adapter-uniapp'
 enum RequestEnums {
   TIMEOUT = 20000,
   OVERDUE = 600,
@@ -25,6 +26,7 @@ const config = {
   baseURL: URL as string,
   timeout: RequestEnums.TIMEOUT as number,
   withCredentials: true,
+  adapter: axiosAdapterUniapp,
 }
 
 class Request {
