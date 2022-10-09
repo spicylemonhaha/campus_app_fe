@@ -1,9 +1,16 @@
 {
   "pages": [
     {
+      "path": "pages/Trends/index",
+      "style": {
+        "navigationBarTitleText": "动态",
+        "backgroundColor": "#f3f4f8"
+      }
+    },
+    {
       "path": "pages/LabelTheme/index",
       "style": {
-        "navigationBarTitleText": "标签专栏"
+        "navigationBarTitleText": "话题"
       }
     },
     {
@@ -68,9 +75,9 @@
       }
     },
     {
-      "path": "pages/Publish/index",
+      "path": "pages/DynamicDetail/index",
       "style": {
-        "navigationBarTitleText": "发布"
+        "navigationBarTitleText": "动态详情"
       }
     },
     {
@@ -102,17 +109,22 @@
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "pagePath": "pages/UserCenter/index",
+        "pagePath": "pages/MemberList/iondex",
+        "text": "消息",
+        "iconPath": "static/img/tarBar/content.png"
+      },
+      {
+        "pagePath": "pages/Trends/index",
         "text": "动态",
         "iconPath": "static/img/tarBar/action.png"
       },
       {
-        "pagePath": "pages/Publish/index",
+        "pagePath": "pages/PublishTrends/index",
         "text": "发布",
         "iconPath": "static/img/tarBar/add.png"
       },
       {
-        "pagePath": "pages/Mine/index",
+        "pagePath": "pages/UserCenter/index",
         "text": "我的",
         "iconPath": "static/img/tarBar/home.png"
       }

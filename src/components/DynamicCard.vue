@@ -1,71 +1,76 @@
 <template>
-  <view class="dynamic-card">
-    <view class="user-box">
-      <view class="user-info">
-        <view class="user-avatar">
-          <u-avatar size="38" :src="userInfo.avatar"></u-avatar>
-        </view>
-        <view>
-          <view class="user-name"> {{ userInfo.name }} </view>
-          <view class="user-certification">
-            <text class="cer-icon">
-              <uni-icons color="#FCA001" type="clear" size="16"></uni-icons>
-            </text>
-            <text>未认证</text>
+  <view class="dynamic-box">
+    <view class="dynamic-card" ref="dynamicWrap">
+      <view class="user-box">
+        <view class="user-info">
+          <view class="user-avatar" @click="showUserInfo">
+            <u-avatar size="38" :src="userInfo.avatar"></u-avatar>
+          </view>
+          <view>
+            <view class="user-name"> {{ userInfo.name }} </view>
+            <view class="user-certification">
+              <text class="cer-icon">
+                <uni-icons color="#FCA001" type="clear" size="16"></uni-icons>
+              </text>
+              <text>未认证</text>
+            </view>
           </view>
         </view>
-      </view>
-      <view class="user-more">
-        <uni-icons
-          custom-prefix="iconfont"
-          color="#54536E"
-          type="icon-gengduo"
-          size="22"
-        ></uni-icons>
-      </view>
-    </view>
-    <view class="dynamic-content">{{ content }}</view>
-    <view class="dynamic-image-box">
-      <u-grid :border="false" :col="colum">
-        <u-grid-item
-          v-for="(listItem, listIndex) in list"
-          :key="listIndex"
-          class="dynamic-image"
-          :class="{ 'is-one': isOne, 'no-one': !isOne }"
-        >
-          <img :src="listItem" alt="" />
-        </u-grid-item>
-      </u-grid>
-    </view>
-    <view class="dynamic-info">
-      <view class="dynamic-time">12小时前</view>
-      <view class="dynamic-interact-box">
-        <view class="dynamic-interact">
+        <view class="user-more">
           <uni-icons
             custom-prefix="iconfont"
-            color="#81868F"
-            type="icon-fenxiang"
-            size="19"
+            color="#54536E"
+            type="icon-gengduo"
+            size="22"
           ></uni-icons>
-          <text class="interact-text">分享</text>
         </view>
-        <view class="dynamic-interact">
-          <uni-icons
-            custom-prefix="iconfont"
-            color="#81868F"
-            type="icon-pinglun"
-            size="19"
-          ></uni-icons>
-          <text class="interact-text">51</text>
-        </view>
-        <view class="dynamic-interact">
-          <uni-icons
-            custom-prefix="iconfont"
-            color="#81868F"
-            type="icon-dianzan"
-            size="19"
-          ></uni-icons>
-          <text class="interact-text">192</text>
+      </view>
+      <view class="dynamic-content" @click="toDynamicDetail">{{
+        content
+      }}</view>
+      <view class="dynamic-image-box" @click="toDynamicDetail">
+        <u-grid :border="false" :col="colum">
+          <u-grid-item
+            v-for="(listItem, listIndex) in list"
+            :key="listIndex"
+            class="dynamic-image"
+            :class="{ 'is-one': isOne, 'no-one': !isOne }"
+          >
+            <img :src="listItem" alt="" />
+          </u-grid-item>
+        </u-grid>
+      </view>
+      <view class="dynamic-info">
+        <view class="dynamic-time">12小时前</view>
+        <view class="dynamic-interact-box">
+          <view class="dynamic-interact">
+            <uni-icons
+              custom-prefix="iconfont"
+              color="#81868F"
+              type="icon-fenxiang"
+              size="19"
+            ></uni-icons>
+            <text class="interact-text">分享</text>
+          </view>
+          <view class="dynamic-interact">
+            <uni-icons
+              custom-prefix="iconfont"
+              color="#81868F"
+              type="icon-pinglun"
+              size="19"
+            ></uni-icons>
+            <text class="interact-text">51</text>
+          </view>
+          <view class="dynamic-interact">
+            <uni-icons
+              custom-prefix="iconfont"
+              color="#81868F"
+              type="icon-dianzan"
+              size="19"
+              @click="good"
+            ></uni-icons>
+            <text class="interact-text">{{ goodCount }}</text>
+          </view>
         </view>
       </view>
     </view>
@@ -87,6 +92,8 @@ const props = withDefaults(defineProps<Props>(), {})
 const { imglist: list, userInfo, content } = props
 const colum = ref<number>()
 const isOne = ref<boolean>()
+const dynamicWrap = ref(null)
+const goodCount = ref<number>(1)
 onMounted(() => {
   if (list.length === 1) {
     colum.value = 1.75
@@ -96,6 +103,19 @@ onMounted(() => {
     isOne.value = false
   }
 })
+const toDynamicDetail = () => {
+  uni.navigateTo({
+    url: '/pages/DynamicDetail/index',
+  })
+}
+const showUserInfo = () => {
+  uni.navigateTo({
+    url: '/pages/UserInfoShow/index',
+  })
+}
+const good = () => {
+  goodCount.value = goodCount.value + 1
+}
 </script>
 
 <style scoped>
@@ -135,6 +155,9 @@ onMounted(() => {
   padding: 0 8px;
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.514);
+}
+.dynamic-box {
+  padding: 7px 0;
 }
 .dynamic-content {
   padding-bottom: 14px;

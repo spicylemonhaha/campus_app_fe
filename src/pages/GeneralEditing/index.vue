@@ -62,6 +62,7 @@ type tagType = {
   type: string
   content: string
 }
+
 const haha = async () => {
   const res = await addCommentLike({
     dynamicId: '123',

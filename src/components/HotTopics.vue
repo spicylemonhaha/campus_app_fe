@@ -6,37 +6,27 @@
     </view>
     <view class="talkContent">
       <view class="contentWrap">
-        <navigator
-          url="../topicDetail/topicDetail?topic=#我们官宣啦"
-          class="content"
+        <navigator url="/pages/LabelTheme/index" class="content"
           >#我们官宣啦</navigator
         >
-        <navigator
-          url="../topicDetail/topicDetail?topic=#第一条动态"
-          class="content"
+        <navigator url="/pages/LabelTheme/index" class="content"
           >#第一条动态</navigator
         >
       </view>
       <view class="contentWrap">
-        <navigator
-          class="content"
-          url="../topicDetail/topicDetail?topic=#失物招领处"
+        <navigator class="content" url="/pages/LabelTheme/index"
           >#失物招领处</navigator
         >
-        <navigator
-          class="content"
-          url="../topicDetail/topicDetail?topic=#求助，在线等"
+        <navigator class="content" url="/pages/LabelTheme/index"
           >#求助，在线等</navigator
         >
       </view>
       <view class="contentWrap">
-        <navigator
-          class="content"
-          url="../topicDetail/topicDetail?topic=#校园无语瞬间"
+        <navigator class="content" url="/pages/LabelTheme/index"
           >#校园无语瞬间</navigator
         >
         <navigator
-          url="../talkAbout/talkAbout"
+          url="/pages/TopicSquare/index"
           class="contentT iconfont icon-youjiantou"
           >更多话题</navigator
         >

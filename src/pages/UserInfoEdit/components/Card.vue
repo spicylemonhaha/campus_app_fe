@@ -4,7 +4,9 @@
       <view class="introduceHead">
         <view class="icon"></view>
         <view class="aboutMe">{{ item.title }}</view>
-        <navigator url="../personalEdit/index" class="edit">编辑</navigator>
+        <navigator url="/pages/GeneralEditing/index" class="edit"
+          >编辑</navigator
+        >
       </view>
       <view
         v-if="item.content == ''"
