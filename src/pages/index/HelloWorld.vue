@@ -1,15 +1,16 @@
 <template>
-  <view class="content">
-    <image class="logo" src="/static/logo.png" />
-    <view class="text-area">
-      <text class="title">{{ title }} </text>
-    </view>
+  <view>
+    <UserCenter></UserCenter>
+    <DynamicGround></DynamicGround>
   </view>
 </template>
 
 <script setup lang="ts">
+import UserCenter from '../UserCenter/index.vue'
 import { ref } from 'vue'
-const title = ref('放在糖果旁的是我很想回忆的甜~')
+import DynamicGround from '../DynamicGround/index.vue'
+import PublishTrends from '../PublishTrends/index.vue'
+import IdentityProof from '../IdentityProof/index.vue'
 </script>
 
 <style>

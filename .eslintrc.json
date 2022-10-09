@@ -1,4 +1,8 @@
 {
+	"globals": {
+		"uni": true, 
+		"wx": true
+	  },
   "env": {
     "browser": true,
     "es2021": true,
@@ -9,6 +13,10 @@
     "plugin:vue/vue3-essential",
     "plugin:@typescript-eslint/recommended"
   ],
+  "globals": {
+    "uni": true, 
+    "wx": true
+  },
   "overrides": [],
   "parser": "vue-eslint-parser",
   "parserOptions": {
@@ -20,6 +28,12 @@
   "rules": {
     "max-lines": ["error", { "max": 300, "skipBlankLines": true }],
     "no-redeclare": "error",
-    "no-useless-return": "error"
+    "no-useless-return": "error",
+    "vue/multi-word-component-names": "off",
+    "vue/no-setup-props-destructure": "off"
+  },
+  "globals": {
+    "uni": true, 
+    "wx": true
   }
 }

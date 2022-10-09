@@ -1,17 +1,148 @@
 {
   "pages": [
-    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
-      "path": "pages/index/HelloWorld",
+      "path": "pages/Trends/index",
       "style": {
-        "navigationBarTitleText": "uni-app"
+        "navigationBarTitleText": "动态",
+        "backgroundColor": "#f3f4f8"
+      }
+    },
+    {
+      "path": "pages/login/login",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/MemberList/index",
+      "style": {
+        "navigationBarTitleText": "消息",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/LabelTheme/index",
+      "style": {
+        "navigationBarTitleText": "话题"
+      }
+    },
+    {
+      "path": "pages/GeneralEditing/index",
+      "style": {
+        "navigationBarTitleText": "通用编辑"
+      }
+    },
+    {
+      "path": "pages/Action/index",
+      "style": {
+        "navigationBarTitleText": "创建聊天"
+      }
+    },
+    {
+      "path": "pages/FollowerList/index",
+      "style": {
+        "navigationBarTitleText": "我的关注"
+      }
+    },
+    {
+      "path": "pages/UserInfoEdit/index",
+      "style": {
+        "navigationBarTitleText": "信息填写"
+      }
+    },
+    {
+      "path": "pages/BaseInfoEdit/index",
+      "style": {
+        "navigationBarTitleText": "基本信息"
+      }
+    },
+    {
+      "path": "pages/UserInfoShow/index",
+      "style": {
+        "navigationBarTitleText": "个人信息"
+      }
+    },
+    {
+      "path": "pages/TopicSquare/index",
+      "style": {
+        "navigationBarTitleText": "话题广场"
+      }
+    },
+    {
+      "path": "pages/IdentityProof/index",
+      "style": {
+        "navigationBarTitleText": "学历认证"
+      }
+    },
+    {
+      "path": "pages/PublishTrends/index",
+      "style": {
+        "navigationBarTitleText": "动态发布"
+      }
+    },
+    {
+      "path": "pages/UserCenter/index",
+      "style": {
+        "navigationBarTitleText": "个人中心",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/DynamicDetail/index",
+      "style": {
+        "navigationBarTitleText": "动态详情"
+      }
+    },
+    {
+      "path": "pages/Mine/index",
+      "style": {
+        "navigationBarTitleText": "我的"
       }
     }
   ],
+
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
+    // "navigationStyle": "custom"
+  },
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      // uni-ui 规则如下配置
+      "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
+      "^u-(.*)": "uview-plus/components/u-$1/u-$1.vue"
+    }
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/MemberList/index",
+        "text": "消息",
+        "iconPath": "static/img/tarBar/content.png"
+      },
+      {
+        "pagePath": "pages/Trends/index",
+        "text": "动态",
+        "iconPath": "static/img/tarBar/action.png"
+      },
+      {
+        "pagePath": "pages/PublishTrends/index",
+        "text": "发布",
+        "iconPath": "static/img/tarBar/add.png"
+      },
+      {
+        "pagePath": "pages/UserCenter/index",
+        "text": "我的",
+        "iconPath": "static/img/tarBar/home.png"
+      }
+    ]
   }
 }
