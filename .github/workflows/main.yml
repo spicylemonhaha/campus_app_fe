@@ -1,0 +1,44 @@
+name: CI
+on:
+  push:
+    branches: [ "develop" ]
+
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        node-version: [15]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+      - name: pnpm build
+        run: | 
+          pnpm build:h5
+          tar -czvf dist.tar dist/build/h5 # 目标文件进行打包
+      - name: Deploy 🚀 
+        uses: cross-the-world/ssh-scp-ssh-pipelines@latest # 因为构建之后，需要把代码上传到服务器上，所以需要连接到ssh，并且做一个安全拷贝(security copy)操作
+        env:
+          WELCOME: "ssh scp ssh pipelines"
+          LASTSSH: "Doing something after copying"
+        with:
+          command_timeout: 20s
+          host: ${{ secrets.USER_HOST }}
+          user: ${{ secrets.USER_NAME }}
+          pass: ${{ secrets.USER_PASS }}
+          first_ssh: |
+            rm -rf /home/www/website
+            mkdir -p /home/www/website
+          scp: |
+           './dist' => /home/www/website
