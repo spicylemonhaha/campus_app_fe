@@ -19,7 +19,7 @@ pnpm dev:指定平台
 
 2. 流水线部署&发布
 
-合并到 develop 之后会通过 github actions 自动部署 H5
+合并到 develop 之后会通过 github actions 自动部署 H5 http://campus_fe.koto-marvelous.com/#/
 
 # 开发规范
 
